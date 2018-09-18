@@ -53,17 +53,7 @@ var tasks = [
      <br><br><u>Hint:</u><br/> <span class='hint'>You may want to reference the <code>.selectedIndex</code> on the <code>select</code> DOM element to get the currently selected option<br>\
      Also, check the  <code>.dataset</code> property on the selected <code>option</code> element to get the data for the field.</p>",
     link: "gifs/select-for-more-info.gif"
-  },
-  {
-    html_id: "add-guest",
-    task: "When the user hits enter while focus is on the input (i.e. while the cursor is blinking), the content of the input should be added to the list below.",
-    link: "gifs/guestList.gif"
-  },
-  {
-    html_id: "add-item-bonus",
-    task: "<u>Adventure Mode </u><br/><br/>Each added item should come with a remove button. Clicking that button should remove the item from the list.",
-    link: "gifs/add-to-list-and-delete.gif"
-  },
+  }
 
 ]
 
