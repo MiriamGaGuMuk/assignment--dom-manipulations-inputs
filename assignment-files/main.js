@@ -29,7 +29,7 @@ document.querySelector("#validate-field-btn").addEventListener('click',function(
 
 document.querySelector("#calculate-items-btn").addEventListener('click', function(){
   //TASK #3
-  let roundInput = document.querySelector('.item-input').value;
+  let roundInput = document.querySelector('.item-input');
   let greenCheck = document.querySelector("sum-total");
   let checkedBox = 0;
 
@@ -39,7 +39,7 @@ document.querySelector("#calculate-items-btn").addEventListener('click', functio
 
     if(itemVal.checked === true){
       checkedBox += imputVal
-      greenCheck.textContent = '$' + checkedBox;
+      greenCheck.textContent = '$' + checkedBox
     }else{
       greenCheck.textContent = '$' + checkedBox
     }
@@ -51,4 +51,25 @@ document.querySelector("#calculate-items-btn").addEventListener('click', functio
 
 document.querySelector("#select-to-show-more-btn").addEventListener('click', function(){
   // TASK #4
-})
+  let box = document.querySelector("#select-to-show-more .selection")
+  let contentSet = box.options[box.selectedIndex]
+  let model =  document.querySelector(".more-info .model")
+  let msrp =  document.querySelector(".more-info .msrp")
+  let mpg = document.querySelector(".more-info .mpg")
+  let edmunds = document.querySelector(".more-info .edmunds")
+  let tagImg = document.querySelector(".more-info .img-box")
+  let contentImg = contentSet.dataset.img
+  model.textContent = box.value
+  msrp.textContent = contentSet.dataset.msrp
+  mpg.textContent = contentSet.dataset.mpg
+  edmunds.textContent = contentSet.dataset.edmunds
+  tagImg.innerHTML = `<img src="images/${contentImg}"/>`
+
+  console.log("model")
+
+
+  console.log(box.options[box.selectedIndex])
+  
+
+
+});
