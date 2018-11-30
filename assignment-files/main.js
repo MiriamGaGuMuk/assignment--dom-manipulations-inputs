@@ -29,23 +29,23 @@ document.querySelector("#validate-field-btn").addEventListener('click',function(
 
 document.querySelector("#calculate-items-btn").addEventListener('click', function(){
   //TASK #3
-  let roundInput = document.querySelector('.item-input');
-  let greenCheck = document.querySelector("sum-total");
+  let roundInput = document.querySelectorAll('.item-input');
+  let sum = document.querySelector(".sum-total");
   let checkedBox = 0;
 
-  for(let i = 0; i < roundInput.length; i++){
-    let itemVal = roundInput[i];
-    let imputVal = parseInt(itemVal.value)
+  const inputsCheck = [...roundInput]
 
-    if(itemVal.checked === true){
-      checkedBox += imputVal
-      greenCheck.textContent = '$' + checkedBox
-    }else{
-      greenCheck.textContent = '$' + checkedBox
+  for(let i = 0; i < inputsCheck.length; i++){
+    let itemVal = inputsCheck[i];
+   
+
+    if(itemVal.checked == true){
+      let imputVal = parseInt(itemVal.value)      
+      sum += imputVal
     }
 
   }
-  
+    sum.textContent = checkedBox
 });
 
 
