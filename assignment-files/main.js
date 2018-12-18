@@ -27,30 +27,20 @@ document.querySelector("#validate-field-btn").addEventListener('click',function(
 });
 
 
-document.querySelector("#calculate-items-btn").addEventListener('click', function(){
-  //TASK #3
-  let roundInput = document.querySelectorAll('.item-input');
-  let sum = document.querySelector(".sum-total");
-  let checkedBox = 0;
 
-  const inputsCheck = [...roundInput]
+  // TASK #3
+  document.querySelector("#calculate-items-btn").addEventListener('click', function(){
+  var total = 0;
+  var inputs = document.querySelectorAll('.item-input');
 
-  for(let i = 0; i < inputsCheck.length; i++){
-    let itemVal = inputsCheck[i];
-   
+  inputs.forEach( input => input.checked ? total += parseInt(input.value) : null );
 
-    if(itemVal.checked == true){
-      let imputVal = parseInt(itemVal.value)      
-      sum += imputVal
-    }
-
-  }
-    sum.textContent = checkedBox
-});
+  document.querySelector('.sum-total').textContent = `$ ${total}`
+})
 
 
-document.querySelector("#select-to-show-more-btn").addEventListener('click', function(){
   // TASK #4
+  document.querySelector("#select-to-show-more-btn").addEventListener('click', function(){
   let box = document.querySelector("#select-to-show-more .selection")
   let contentSet = box.options[box.selectedIndex]
   let model =  document.querySelector(".more-info .model")
